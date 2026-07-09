@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --color-charcoal: #15130F;
+  --color-gold: #D4A24E;
+  --color-wine: #7A2E3A;
+  --color-parchment: #EDE6D6;
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+@keyframes hero-flip-in {
+  0% {
+    transform: rotateY(90deg) scale(1.05);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateY(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+.hero-flip {
+  transform-origin: center;
+  animation: hero-flip-in 1s ease-out;
+}
