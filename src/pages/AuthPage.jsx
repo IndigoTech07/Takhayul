@@ -16,19 +16,28 @@ function AuthPage() {
     setError('')
     setLoading(true)
 
-    const { error } = isSignUp
-      ? await supabase.auth.signUp({ email, password })
-      : await supabase.auth.signInWithPassword({ email, password })
+    if (isSignUp) {
+      const { data, error } = await supabase.auth.signUp({ email, password })
 
-    setLoading(false)
+      setLoading(false)
 
-    if (error) {
-      setError(error.message)
-    } else if (isSignUp) {
-      setError('')
-      setCheckEmail(true)
+      if (error) {
+        setError(error.message)
+      } else if (data?.user && data.user.identities?.length === 0) {
+        setError('This email is already registered. Try logging in instead.')
+      } else {
+        setCheckEmail(true)
+      }
     } else {
-      navigate('/')
+      const { error } = await supabase.auth.signInWithPassword({ email, password })
+
+      setLoading(false)
+
+      if (error) {
+        setError(error.message)
+      } else {
+        navigate('/')
+      }
     }
   }
 
