@@ -8,6 +8,7 @@ function AuthPage() {
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
+  const [checkEmail, setCheckEmail] = useState(false)
   const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
@@ -24,10 +25,23 @@ function AuthPage() {
     if (error) {
       setError(error.message)
     } else if (isSignUp) {
-      navigate('/onboarding')
+      setError('')
+      setCheckEmail(true)
     } else {
       navigate('/')
     }
+  }
+
+  if (checkEmail) {
+    return (
+      <div className="flex flex-col items-center pt-20 gap-4 px-6 text-center">
+        <h1 className="text-3xl font-bold text-parchment">Check your email</h1>
+        <p className="text-parchment/60 max-w-sm">
+          We sent you a confirmation link. Click it, then come back and log in
+          to finish setting up your taste profile.
+        </p>
+      </div>
+    )
   }
 
   return (
