@@ -140,7 +140,7 @@ Respond with ONLY valid JSON, no other text, in exactly this shape:
         >
          Takhayul
        </h1>
-          <p className="text-parchment/80 text-lg mb-8">
+          <p className="text-parchment/80 text-sm sm:text-base md:text-lg mb-8">
             Know what is worth your time before you spend it.
           </p>
 
