@@ -134,8 +134,8 @@ Respond with ONLY valid JSON, no other text, in exactly this shape:
         />
 
         <div className="relative max-w-xl pb-32 px-6">
-          <h1
-          className="text-8xl font-bold mb-4 uppercase tracking-wider bg-gradient-to-r from-gold to-wine bg-clip-text text-transparent"
+        <h1
+          className="text-4xl sm:text-6xl md:text-8xl font-bold mb-4 uppercase tracking-wider bg-gradient-to-r from-gold to-wine bg-clip-text text-transparent"
           style={{ filter: 'drop-shadow(0 4px 20px rgba(0,0,0,0.8))' }}
         >
          Takhayul
