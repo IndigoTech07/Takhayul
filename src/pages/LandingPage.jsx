@@ -174,7 +174,7 @@ Respond with ONLY valid JSON, no other text, in exactly this shape:
           {recLoading ? (
             <p className="text-parchment/60 text-sm">Thinking of picks for you...</p>
           ) : recMovies.length > 0 ? (
-            <div className="flex flex-wrap gap-6 justify-center">
+           <div className="flex flex-wrap gap-3 sm:gap-4 md:gap-6 justify-center">
               {recMovies.map((movie) => (
                 <MovieCard
                   key={movie.id}
@@ -205,7 +205,7 @@ Respond with ONLY valid JSON, no other text, in exactly this shape:
         {loading ? (
           <p className="text-parchment/60">Loading...</p>
         ) : (
-          <div className="flex flex-wrap gap-6 justify-center">
+         <div className="flex flex-wrap gap-3 sm:gap-4 md:gap-6 justify-center">
             {movies.slice(0, 4).map((movie) => (
               <MovieCard
                 key={movie.id}
@@ -231,7 +231,7 @@ Respond with ONLY valid JSON, no other text, in exactly this shape:
         {loading ? (
           <p className="text-parchment/60">Loading...</p>
         ) : (
-          <div className="flex flex-wrap gap-6 justify-center">
+          <div className="flex flex-wrap gap-3 sm:gap-4 md:gap-6 justify-center">
             {books.slice(0, 4).map((book) => (
               <BookCard
                 key={book.id}
